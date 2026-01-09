@@ -547,7 +547,7 @@ func SetupPortForward(namespace string) error {
 	// Verificar conectividade do backend
 	fmt.Println("   Verificando conectividade do backend...")
 	backendOK := false
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 15; i++ {
 		healthCmd := exec.Command("curl", "-s", "--max-time", "2", "http://localhost:8080/api/v1/health")
 		if healthCmd.Run() == nil {
 			backendOK = true
@@ -598,7 +598,7 @@ func SetupPortForward(namespace string) error {
 	// Verificar se o frontend está acessível
 	fmt.Println("   Verificando conectividade do frontend...")
 	frontendOK := false
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 15; i++ {
 		frontendCheckCmd := exec.Command("curl", "-s", "--max-time", "2", "-o", "/dev/null", "-w", "%{http_code}", "http://localhost:8000")
 		var out bytes.Buffer
 		frontendCheckCmd.Stdout = &out
