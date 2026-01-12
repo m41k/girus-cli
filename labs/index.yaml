@@ -10,6 +10,6 @@ entries:
         - keyword2
       maintainers:
         - "Nome <email@exemplo.com>"
-      url: "https://github.com/m41k/raw/main/labs/lab-name/index.yaml"
+      url: "https://raw.githubusercontent.com/m41k/girus-cli/refs/heads/main/labs/index.yaml"
       created: "2024-03-20T10:00:00Z"
       digest: "sha256:hash-do-arquivo"
